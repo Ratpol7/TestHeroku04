@@ -1,1 +1,1 @@
-web: gunicorn test-deploy-heroku03.py
+web: gunicorn app:app
