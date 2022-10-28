@@ -1,1 +1,1 @@
-bot: python main.py
+bot: python test-deploy-heroku03.py
