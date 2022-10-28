@@ -1,1 +1,1 @@
-bot: python test-deploy-heroku03.py
+web: gunicorn test-deploy-heroku03.py
