@@ -1,1 +1,1 @@
-web: gunicorn test-deploy-heroku02:app --log-file -
+web: gunicorn app:server
