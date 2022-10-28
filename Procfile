@@ -1,1 +1,1 @@
-worker: python test-deploy-heroku03.py
+web: python test-deploy-heroku03.py
