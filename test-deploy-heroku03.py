@@ -1,14 +1,8 @@
-import flask
+from line_notify import LineNotify
 import os
-from flask import send_from_directory
-
-app = flask.Flask(__name__)
-@app.route('/')
-@app.route('/home')
-def home():
-    return "Hello"
-
-if __name__ == "__main__":
-    app.secret_key = 'ItIsASecret'
-    app.debug = True
-    app.run()
+Line_Notify = "RDUnfnGrcnb81X9wpZUjWGf8GdtHNgCkMP76i9ANCKj"
+notify = LineNotify(Line_Notify)
+t = 1
+if t == 1:
+    notify.send("TestDeploy", sticker_id=17851, package_id=1070)
+    t = 0
