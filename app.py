@@ -28,9 +28,9 @@ def yfinance():
     yahoo_financials = yf('BTC-USD')
     data=yahoo_financials.get_historical_price_data("2019-07-10", "2021-05-30", "monthly")
     btc_df = pd.DataFrame(data['BTC-USD']['prices'])
-    btc_df = btc_df.drop('date', axis=1).set_index('formatted_date')
-    btc_df.head()
-    return btc_df
+    return btc_df.to_html(header="true", table_id="table")
+
+    
 if __name__ == "__main__":
     # app.run(host='0.0.0.0',port=80,debug=True)
     app.run()
