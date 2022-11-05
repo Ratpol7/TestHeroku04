@@ -6,10 +6,10 @@ notify = LineNotify(Line_Notify)
 
 app = Flask(__name__)
 
-@app.route('/home')
-def hello_line():
-    notify.send("TestDeploy", sticker_id=17851, package_id=1070)
-    return "Hello"
+@app.route('/')
+def hello_view():
+    # notify.send("TestDeploy", sticker_id=17851, package_id=1070)
+    return "<h1>Hello World!<h1>"
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=80,debug=True)
 
