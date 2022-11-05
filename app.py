@@ -8,9 +8,11 @@ import mplfinance as mpf
 import matplotlib.pyplot as plt
 import yfinance as yf
 import streamlit as st
+import numpy
+import requests
 df = pd.DataFrame({'col1': ['abc', 'def', 'tre'],
                    'col2': ['foo', 'bar', 'stuff']})
-
+data = yf.download("BTC", start="2017-01-01", end="2017-04-30")
 Line_Notify = str(os.getenv('Line_Notify_Token'))
 # Line_Notify = "RDUnfnGrcnb81X9wpZUjWGf8GdtHNgCkMP76i9ANCKj"
 notify = LineNotify(Line_Notify)
@@ -24,9 +26,10 @@ def hello_view():
 
 @app.route('/1')
 def pandas():
-    st.set_page_config(page_title="US Stock Analysis",)
-    st.write("""##### Closing Price""")
-    return df.to_html(header="true", table_id="table")
+    return  data.head()
+    # return df.to_html(header="true", table_id="table")
+# st.set_page_config(page_title="US Stock Analysis",)
+# st.write("""##### Closing Price""")
 
 # @app.route('/2')
 # def yfinance():
