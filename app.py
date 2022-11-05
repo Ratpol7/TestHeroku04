@@ -26,7 +26,8 @@ def hello_view():
 
 @app.route('/1')
 def pandas():
-    return  data.head()
+    dt = pd.DataFrame(data)
+    return  dt.to_html()
     # return df.to_html(header="true", table_id="table")
 # st.set_page_config(page_title="US Stock Analysis",)
 # st.write("""##### Closing Price""")
