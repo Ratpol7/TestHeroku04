@@ -14,7 +14,7 @@ df = pd.DataFrame({'col1': ['abc', 'def', 'tre'],
 Line_Notify = str(os.getenv('Line_Notify_Token'))
 # Line_Notify = "RDUnfnGrcnb81X9wpZUjWGf8GdtHNgCkMP76i9ANCKj"
 notify = LineNotify(Line_Notify)
-st.write("""##### Closing Price""")
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -24,7 +24,7 @@ def hello_view():
 
 @app.route('/1')
 def pandas():
-    
+    st.write("""##### Closing Price""")
     return df.to_html(header="true", table_id="table")
 
 # @app.route('/2')
