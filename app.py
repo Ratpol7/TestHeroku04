@@ -1,12 +1,12 @@
 from line_notify import LineNotify
 from flask import Flask, jsonify
 import pandas as pd
-
+import os
 df = pd.DataFrame({'col1': ['abc', 'def', 'tre'],
                    'col2': ['foo', 'bar', 'stuff']})
 
-# Line_Notify = str(os.environ['Line_Notify_Token'])
-Line_Notify = "RDUnfnGrcnb81X9wpZUjWGf8GdtHNgCkMP76i9ANCKj"
+Line_Notify = str(os.environ.get('Line_Notify_Token'))
+# Line_Notify = "RDUnfnGrcnb81X9wpZUjWGf8GdtHNgCkMP76i9ANCKj"
 notify = LineNotify(Line_Notify)
 
 app = Flask(__name__)
