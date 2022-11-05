@@ -30,7 +30,7 @@ def yfinance():
     btc_df = pd.DataFrame(data['BTC-USD']['prices'])
     btc_df = btc_df.drop('date', axis=1).set_index('formatted_date')
     btc_df.head()
-    return data
+    return btc_df
 if __name__ == "__main__":
     # app.run(host='0.0.0.0',port=80,debug=True)
     app.run()
