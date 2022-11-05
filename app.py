@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_view():
-    # notify.send("TestDeploy", sticker_id=17851, package_id=1070)
+    notify.send("TestDeploy", sticker_id=17851, package_id=1070)
     return "<h1>Hello World!<h1>"
 @app.route('/pandas')
 def pandas():
