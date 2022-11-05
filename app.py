@@ -5,7 +5,7 @@ import os
 df = pd.DataFrame({'col1': ['abc', 'def', 'tre'],
                    'col2': ['foo', 'bar', 'stuff']})
 
-Line_Notify = str(os.environ.get('Line_Notify_Token'))
+Line_Notify = str(os.getenv('Line_Notify_Token'))
 # Line_Notify = "RDUnfnGrcnb81X9wpZUjWGf8GdtHNgCkMP76i9ANCKj"
 notify = LineNotify(Line_Notify)
 
@@ -21,3 +21,4 @@ def pandas():
 if __name__ == "__main__":
     # app.run(host='0.0.0.0',port=80,debug=True)
     app.run()
+
