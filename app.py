@@ -15,6 +15,7 @@ app = Flask(__name__)
 def hello_view():
     # notify.send("TestDeploy", sticker_id=17851, package_id=1070)
     return "<h1>Hello World!<h1>"
+@app.route('/a')
 def pandas():
     return df.to_html(header="true", table_id="table")
 if __name__ == "__main__":
