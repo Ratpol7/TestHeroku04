@@ -6,7 +6,7 @@ notify = LineNotify(Line_Notify)
 
 app = Flask(__name__)
 
-app.route('/home')
+@app.route('/home')
 def hello_line():
     notify.send("TestDeploy", sticker_id=17851, package_id=1070)
     return "Hello"
