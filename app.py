@@ -12,7 +12,7 @@ import numpy
 import requests
 df = pd.DataFrame({'col1': ['abc', 'def', 'tre'],
                    'col2': ['foo', 'bar', 'stuff']})
-data = yf.download("BTC-US", start="2017-01-01", end="2017-04-30")
+data = yf.download("BTC-US", start="2017-01-01", end="2017-02-30")
 Line_Notify = str(os.getenv('Line_Notify_Token'))
 # Line_Notify = "RDUnfnGrcnb81X9wpZUjWGf8GdtHNgCkMP76i9ANCKj"
 notify = LineNotify(Line_Notify)
@@ -27,7 +27,7 @@ def hello_view():
 @app.route('/1')
 def pandas():
     dt = pd.DataFrame(data)
-    return  dt.to_html()
+    return  dt.to_html(header="true", table_id="table")
     # return df.to_html(header="true", table_id="table")
 # st.set_page_config(page_title="US Stock Analysis",)
 # st.write("""##### Closing Price""")
