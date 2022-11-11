@@ -22,9 +22,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello_view():
     # notify.send("TestDeploy", sticker_id=17851, package_id=1070)
-    for i in range(5):
-        prt=i
-    return "<h1>Hello World!<h1>"+"prt"
+    return "<h1>Hello World!<h1>"
 
 @app.route('/1')
 def pandas():
